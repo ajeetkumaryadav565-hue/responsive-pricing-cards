@@ -1,0 +1,173 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background: rgb(230, 218, 218);
+  color: darkslategray;
+  min-height: 100vh;
+}
+
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 60px 20px;
+  text-align: center;
+}
+
+h1 {
+  font-size: 2.4rem;
+}
+
+.subtitle {
+  color: slategray;
+  margin: 8px 0 50px;
+}
+
+.cards {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 24px;
+}
+
+.card {
+  position: relative;
+  flex: 1;
+  max-width: 300px;
+  background: rgb(231, 219, 219);
+  padding: 36px 24px;
+  border-radius: 16px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.15);
+}
+
+.card h2 {
+  font-size: 1.4rem;
+  margin-bottom: 12px;
+}
+
+.price {
+  font-size: 2.6rem;
+  font-weight: bold;
+  color: slateblue;
+}
+
+.price span {
+  font-size: 1rem;
+  color: slategray;
+  font-weight: normal;
+}
+
+.card ul {
+  list-style: none;
+  margin: 24px 0 30px;
+}
+
+.card li {
+  padding: 10px 0;
+  border-bottom: 1px solid gainsboro;
+}
+
+.card li::before {
+  content: "✔ ";
+  color: forestgreen;
+}
+
+.card li.off {
+  color: darkgray;
+  text-decoration: line-through;
+}
+
+.card li.off::before {
+  content: "✘ ";
+  color: crimson;
+}
+
+.btn {
+  display: inline-block;
+  padding: 12px 32px;
+  border-radius: 50px;
+  background: slateblue;
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background 0.3s;
+}
+
+.btn:hover {
+  background: darkslateblue;
+}
+
+.card.featured {
+  background: slateblue;
+  color: white;
+  transform: scale(1.08);
+}
+
+.card.featured:hover {
+  transform: scale(1.08) translateY(-10px);
+}
+
+.card.featured .price,
+.card.featured .price span {
+  color: white;
+}
+
+.card.featured li {
+  border-bottom-color: rgba(255, 255, 255, 0.25);
+}
+
+.card.featured li::before {
+  color: white;
+}
+
+.card.featured .btn {
+  background: white;
+  color: slateblue;
+}
+
+.card.featured .btn:hover {
+  background: gainsboro;
+}
+
+.card.featured .badge {
+  position: absolute;
+  top: -14px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: gold;
+  color: black;
+  padding: 4px 16px;
+  border-radius: 50px;
+  font-size: 0.8rem;
+  font-weight: bold;
+}
+
+@media (max-width: 768px) {
+  .cards {
+    flex-direction: column;
+  }
+
+  .card {
+    width: 100%;
+    max-width: 360px;
+  }
+
+  .card.featured,
+  .card.featured:hover {
+    transform: none;
+  }
+
+  h1 {
+    font-size: 1.8rem;
+  }
+}
